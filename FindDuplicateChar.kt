@@ -16,6 +16,20 @@ fun returnDuplicateChar(str:String):HashMap<Char,Int> {
     }
     return map1
 }
+// using filter values prop of hashmap collection
+val given = "shviani"
+   
+val map = hashMapOf<Char,Int>()
+for(i in given) {
+     if(map.containsKey(i)) {
+       map[i] =map[i]!!.plus(1)
+    } else {
+       map[i] = 1
+    }
+}
+ print(map.filterValues {
+         it > 1
+     }.entries)
 
 //output {a=7, s=5, d=15, e=2, f=9, g=2}
 
